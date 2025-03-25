@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Lennujaamad from './Lennujaamad.jsx'
+import Lennud from './Lennud.jsx'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -19,6 +20,7 @@ function App() {
       <br />
       <label>Vali kuupäev</label>
       <DatePicker selected={väljumiskuupäev} onChange={(päev) => setväljumiskuupäev(päev)} />
+      <Lennud />
     </>
   )
 }

@@ -13,8 +13,11 @@ function Lennujaamad(props) {
 
     return (
         <>
-          <select name={props.name} id={props.id}>
-                {lennujaamad.map((jaam) => <option value={jaam.kood}>{jaam.kood}</option>)}
+          <select onChange={(e) => onSelect(e.target.value)} name={props.name} id={props.id}>
+            <option value="">Vali {props.name}</option>
+            {lennujaamad.map((jaam) => (
+                <option value={jaam.kood}>{jaam.kood} {jaam.nimi}</option>
+            ))}
           </select>
         </>
     )

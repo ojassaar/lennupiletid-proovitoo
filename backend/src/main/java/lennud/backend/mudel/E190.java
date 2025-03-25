@@ -1,5 +1,8 @@
 package lennud.backend.mudel;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class E190 extends Lennuk {
 
     // Embraer E190

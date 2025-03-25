@@ -15,3 +15,13 @@
 
 **Aega kulus:** 2h  
 **Mida tegin:** Tegin Githubi repo. Lisasin abstraktse klassi `Lennuk` ja mõned klassid konkreetsete lennukimudelite jaoks. Lisasin klassi `Lend` väljad lennuki ja istekohtade jaoks. Lisasin `react-datepicker`-iga kuupäeva valimise
+
+### 2025-03-24
+**Aega kulus:** 1h
+**Mida tegin:** Üritasin lisada andmebaasiga ühendust
+**Raskusi valamistas:** Nii palju erinevaid komponente ja ma ei ole midagi sellist varem teinud
+
+### 2025-03-25
+**Aega kulus:** 4h  
+**Mida tegin:** *Back-end* saab nüüd andmeid küsida H2 andmebaasist  
+**Raskusi valmistas:** Tehisaru antud näited ei olnud täielikud ja viskas pidevalt veateateid nt ei öelnud, et JPA-l on vaja tühje konstruktoreid ja seda oli nõme veateatest üles otsida

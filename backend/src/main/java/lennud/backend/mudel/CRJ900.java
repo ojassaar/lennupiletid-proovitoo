@@ -1,5 +1,8 @@
 package lennud.backend.mudel;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class CRJ900 extends Lennuk {
 
     // Bombardier CRJ900

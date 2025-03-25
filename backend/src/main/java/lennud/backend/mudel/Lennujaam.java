@@ -1,9 +1,17 @@
 package lennud.backend.mudel;
 
+import jakarta.persistence.*;;
+
+@Entity
 public class Lennujaam {
 
-    private final String nimi;
-    private final String kood;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String nimi;
+    private String kood;
+
+    public Lennujaam() {}
 
     public Lennujaam(String nimi, String kood) {
         this.nimi = nimi;

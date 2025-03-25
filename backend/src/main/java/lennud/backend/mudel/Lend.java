@@ -1,16 +1,35 @@
 package lennud.backend.mudel;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Lend {
 
-    private final Lennujaam algpunkt;
-    private final Lennujaam sihtpunkt;
-    private final LocalDateTime väljumisaeg;
-    private final LocalDateTime saabumisaeg;
-    private final Lennuk lennuk;
-    private final double piletihind;
-    private final Istekoht[][] istekohad;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @ManyToOne
+    private Lennujaam algpunkt;
+    @ManyToOne
+    private Lennujaam sihtpunkt;
+    private LocalDateTime väljumisaeg;
+    private LocalDateTime saabumisaeg;
+    @ManyToOne
+    private Lennuk lennuk;
+    private double piletihind;
+    @OneToMany
+    private List<Istekoht> istekohad;
+
+    public Lend() {}
 
     public Lend(Lennujaam algpunkt, Lennujaam sihtpunkt, LocalDateTime väljumisaeg, LocalDateTime saabumisaeg, Lennuk lennuk, double piletihind) {
         this.algpunkt = algpunkt;
@@ -20,16 +39,7 @@ public class Lend {
         this.lennuk = lennuk;
         this.piletihind = piletihind;
 
-        int ridu = lennuk.getIstmeridu();
-        int kohtiReas = lennuk.getVasakulIstmeid() + lennuk.getParemalIstmeid();
-        this.istekohad = new Istekoht[ridu][];
-        for (int i = 0; i < ridu; i++) {
-            Istekoht[] rida = new Istekoht[kohtiReas];
-            for (int j = 0; j < kohtiReas; j++) {
-                rida[j] = new Istekoht();
-            }
-            istekohad[i] = rida;
-        }
+        this.istekohad = new ArrayList<>();
     }
 
     public Lennujaam getAlgpunkt() {
