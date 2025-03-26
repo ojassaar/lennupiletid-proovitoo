@@ -22,6 +22,7 @@ function Lennud(props) {
         <>
           <br />
           <button onClick={värksendaLende}>Otsi</button>
+          <p>Leiti {lennud.length} lendu</p>
           {lennud.map((lend) => (
             <>
               <br />
