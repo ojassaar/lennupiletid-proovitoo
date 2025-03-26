@@ -25,3 +25,8 @@
 **Aega kulus:** 4h  
 **Mida tegin:** *Back-end* saab nüüd andmeid küsida H2 andmebaasist  
 **Raskusi valmistas:** Tehisaru antud näited ei olnud täielikud ja viskas pidevalt veateateid nt ei öelnud, et JPA-l on vaja tühje konstruktoreid ja seda oli nõme veateatest üles otsida
+
+### 2025-03-26
+**Aega kulus:** 3h  
+**Mida tegin:** Saab küsida lende alg- ja sihtpunkti ning kuupäeva järgi  
+**Raskusi valmistas:** Raske aru saada, et mis andmeid päringutega edastatakse

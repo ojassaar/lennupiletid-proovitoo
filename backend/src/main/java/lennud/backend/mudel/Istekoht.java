@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Istekoht {
@@ -13,7 +15,14 @@ public class Istekoht {
     private long id;
     private boolean saadaval;
 
-    public Istekoht() {
+    @ManyToOne
+    @JoinColumn(name = "lend_id")
+    Lend lend;
+
+    public Istekoht() {}
+
+    public Istekoht(Lend lend) {
+        this.lend = lend;
         this.saadaval = true;
     }
 

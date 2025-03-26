@@ -23,8 +23,8 @@ public class LendudeKontroller {
         this.lendudePäringud = lendudePäringud;
     }
 
-    @PostMapping("/lennud/filtreeri")
+    @PostMapping("/api/lennud/filtreeri")
     public List<Lend> getFiltreeritudLennud(@RequestBody Lennufilter filter) {
-        return lendudePäringud.findFiltreeritud(filter.getAeg(), filter.getAlgpunkt(), filter.getSihtpunkt());
+        return lendudePäringud.findFiltreeritud(filter.getAlgpunkt(), filter.getSihtpunkt(), filter.getAeg());
     }
 }

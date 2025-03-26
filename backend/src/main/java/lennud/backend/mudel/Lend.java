@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
@@ -17,16 +18,24 @@ public class Lend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @ManyToOne
+    @JoinColumn(name = "algpunkt_id", nullable = false)
     private Lennujaam algpunkt;
+    
     @ManyToOne
+    @JoinColumn(name = "sihtpunkt_id", nullable = false)
     private Lennujaam sihtpunkt;
+
     private LocalDateTime väljumisaeg;
     private LocalDateTime saabumisaeg;
+    
     @ManyToOne
+    @JoinColumn(name = "lennuk_id", nullable = false)
     private Lennuk lennuk;
     private double piletihind;
-    @OneToMany
+    
+    @OneToMany(mappedBy = "lend")
     private List<Istekoht> istekohad;
 
     public Lend() {}

@@ -2,12 +2,10 @@ package lennud.backend.dto;
 
 import java.time.LocalDate;
 
-import lennud.backend.mudel.Lennujaam;
-
 public class Lennufilter {
     private LocalDate aeg;
-    private Lennujaam algpunkt;
-    private Lennujaam sihtpunkt;
+    private long algpunkt;
+    private long sihtpunkt;
 
     public LocalDate getAeg() {
         return aeg;
@@ -17,19 +15,19 @@ public class Lennufilter {
         this.aeg = aeg;
     }
 
-    public Lennujaam getAlgpunkt() {
+    public long getAlgpunkt() {
         return algpunkt;
     }
 
-    public void setAlgpunkt(Lennujaam algpunkt) {
+    public void setAlgpunkt(long algpunkt) {
         this.algpunkt = algpunkt;
     }
 
-    public Lennujaam getSihtpunkt() {
+    public long getSihtpunkt() {
         return sihtpunkt;
     }
 
-    public void setSihtpunkt(Lennujaam sihtpunkt) {
+    public void setSihtpunkt(long sihtpunkt) {
         this.sihtpunkt = sihtpunkt;
     }
 }
