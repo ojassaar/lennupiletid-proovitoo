@@ -18,6 +18,11 @@ function Lennud(props) {
       }
     }
 
+    function ainultAeg(kuupäevJaAeg) {
+      let pooleks = kuupäevJaAeg.split("T");
+      return pooleks[1];
+    }
+
     return (
         <>
           <br />
@@ -26,12 +31,20 @@ function Lennud(props) {
           {lennud.map((lend) => (
             <>
               <br />
-              <input type="radio" id={lend.id} name="lennud" value={lend.id}></input>
-              <label for={lend.id}>{lend.väljumisaeg}</label>
+              <input type="radio" id={lend.id} name="lennuvalikud" value={lend.id} checked={props.valitudLend == lend.id} onChange={(e) => props.onChange(e.target.value)}></input>
+              <label htmlFor={lend.id}>{ainultAeg(lend.väljumisaeg)}</label>
             </>
           ))}
         </>
     )
 }
+
+/*
+<p key={index + "p"} >{lend.algpunkt.nimi}</p>
+              <br key={index + "b"} />
+              <input type="radio" key={index} name="lennuvalikud" value={lend.id} checked={JSON.stringify(props.valitudLend) == JSON.stringify(lend.id)} onChange={(e) => props.onChange(e.target.value)} ></input>
+              <label key={index+"a"} htmlFor={lend.id}>{lend.väljumisaeg} {lend.id}</label>
+
+*/
 
 export default Lennud
