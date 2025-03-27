@@ -27,6 +27,10 @@ public abstract class Lennuk {
         this.väljaPääsuRida = väljaPääsuRida;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getNimi() {
         return nimi;
     }

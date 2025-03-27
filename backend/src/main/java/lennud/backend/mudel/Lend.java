@@ -51,6 +51,10 @@ public class Lend {
         this.istekohad = new ArrayList<>();
     }
 
+    public long getId() {
+        return id;
+    }
+
     public Lennujaam getAlgpunkt() {
         return algpunkt;
     }

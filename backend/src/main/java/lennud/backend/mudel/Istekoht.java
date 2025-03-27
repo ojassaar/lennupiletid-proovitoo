@@ -26,6 +26,10 @@ public class Istekoht {
         this.saadaval = true;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public boolean kasSaadaval() {
         return saadaval;
     }

@@ -18,6 +18,10 @@ public class Lennujaam {
         this.kood = kood;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getNimi() {
         return nimi;
     }
