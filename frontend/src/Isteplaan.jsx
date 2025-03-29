@@ -86,8 +86,10 @@ function LennukiIsteplaan(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(lendJaPiletid),
         })
-        .then(response => response.json())
-        .then(data => console.log("Broneeritud:", data))
+        .then(response => response.text())
+        .then(data => {
+            console.log("Broneeritud:", data); setReloadCount(prev => prev + 1);
+        })
         .catch(error => console.error("Viga broneerimisel:", error));
     };
     
