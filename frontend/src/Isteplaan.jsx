@@ -1,13 +1,17 @@
 import './isteplaan.css';
 import { useState, useEffect } from "react";
 
+// suurema osa tegi tehisaru
+
 function LennukiIsteplaan(props) {
     const [maatriks, setMaatriks] = useState([]);
     const [lennud, setLennud] = useState([]);
     const [reloadCount, setReloadCount] = useState(0);
     const[vahekäiguKõrval, setVahekäiguKõrval] = useState(-1);
     const[laius, setLaius] = useState(0);
+    const[väljapääsuRida, setVäljapääsuRida] = useState(-1);
     const[ühePiletiHind, setÜhePiletiHind] = useState(0);
+    const[valitudPiletiteArv, setValitudPiletiteArv] = useState(0);
 
     const filter = { id: props.lennuId };
 
@@ -33,7 +37,9 @@ function LennukiIsteplaan(props) {
         let pikkus = lend.lennuk.istmeridu;
         setLaius(lend.lennuk.vasakulIstmeid + lend.lennuk.paremalIstmeid);
         setVahekäiguKõrval(lend.lennuk.vasakulIstmeid);
+        setVäljapääsuRida(lend.lennuk.väljapääsuRida);
         setÜhePiletiHind(lend.piletihind);
+        setValitudPiletiteArv(0);
 
         let uusMaatriks = [];
         let i = 0;
@@ -62,11 +68,30 @@ function LennukiIsteplaan(props) {
 
     const valiKoht = (rida, koht) => {
         if (maatriks[rida][koht] === 1) return;
-        const uusMaatriks = maatriks.map((r, i) =>
-            i === rida ? r.map((v, j) => (j === koht ? (v === 2 ? 0 : 2) : v)) : r
-        );
+    
+        const uusMaatriks = maatriks.map((r, i) => {
+            if (i === rida) {
+                return r.map((v, j) => {
+                    if (j === koht) {
+                        if (v === 2) {
+                            setValitudPiletiteArv(a => a - 1);
+                            return 0;
+                        } else {
+                            setValitudPiletiteArv(a => a + 1);
+                            return 2;
+                        }
+                    } else {
+                        return v;
+                    }
+                });
+            } else {
+                return r;
+            }
+        });
+    
         setMaatriks(uusMaatriks);
     };
+    
 
     const kinnitaValik = () => {
         const valitudKohad = [];
@@ -96,6 +121,7 @@ function LennukiIsteplaan(props) {
 
     return (
         <div>
+            <p>Pileteid: {valitudPiletiteArv}, Summa: {valitudPiletiteArv * ühePiletiHind}€</p>
             <button onClick={kinnitaValik}>Kinnita piletid</button>
             <button onClick={() => setReloadCount(c => c + 1)}>Laadi uuesti</button>
             <div className="isteplaan" style={{gridTemplateColumns: 'repeat(' + laius + ', 50px)'}}>
@@ -109,7 +135,8 @@ function LennukiIsteplaan(props) {
                                 koht === 2 ? "valitud" :
                                 "vaba"
                             }`}
-                            style={{ marginLeft: kohtIndex >= vahekäiguKõrval ? '10px' : '0px' }}
+                            style={{ marginLeft: kohtIndex >= vahekäiguKõrval ? '10px' : '0px',
+                                marginTop: ridaIndex == väljapääsuRida - 1 ? '20px' : '0px'}}
                         >
                             {String.fromCharCode(65 + kohtIndex)}
                             {ridaIndex + 1}

@@ -15,16 +15,16 @@ public abstract class Lennuk {
     protected int istmeridu;
     protected int vasakulIstmeid;
     protected int paremalIstmeid;
-    protected int väljaPääsuRida;
+    protected int väljapääsuRida;
 
     public Lennuk() {}
 
-    protected Lennuk(String nimi, int istmeridu, int vasakulIstmeid, int paremalIstmeid, int väljaPääsuRida) {
+    protected Lennuk(String nimi, int istmeridu, int vasakulIstmeid, int paremalIstmeid, int väljapääsuRida) {
         this.nimi = nimi;
         this.istmeridu = istmeridu;
         this.vasakulIstmeid = vasakulIstmeid;
         this.paremalIstmeid = paremalIstmeid;
-        this.väljaPääsuRida = väljaPääsuRida;
+        this.väljapääsuRida = väljapääsuRida;
     }
 
     public long getId() {
@@ -48,7 +48,7 @@ public abstract class Lennuk {
     }
 
     public int getVäljapääsuRida() {
-        return väljaPääsuRida;
+        return väljapääsuRida;
     }
 
 }
