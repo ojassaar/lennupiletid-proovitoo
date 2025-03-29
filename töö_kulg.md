@@ -17,8 +17,8 @@
 **Mida tegin:** Tegin Githubi repo. Lisasin abstraktse klassi `Lennuk` ja mõned klassid konkreetsete lennukimudelite jaoks. Lisasin klassi `Lend` väljad lennuki ja istekohtade jaoks. Lisasin `react-datepicker`-iga kuupäeva valimise
 
 ### 2025-03-24
-**Aega kulus:** 1h
-**Mida tegin:** Üritasin lisada andmebaasiga ühendust
+**Aega kulus:** 1h  
+**Mida tegin:** Üritasin lisada andmebaasiga ühendust  
 **Raskusi valamistas:** Nii palju erinevaid komponente ja ma ei ole midagi sellist varem teinud
 
 ### 2025-03-25
@@ -30,3 +30,13 @@
 **Aega kulus:** 3h  
 **Mida tegin:** Saab küsida lende alg- ja sihtpunkti ning kuupäeva järgi  
 **Raskusi valmistas:** Raske aru saada, et mis andmeid päringutega edastatakse
+
+### 2025-03-27
+**Aega kulus:** 1h  
+**Mida tegin:** Lisasin andmeklassidele getId meetodid  
+**Raskusi valmistas:** Ei saanud aru, et miks *front-end* ei saa kasutada lennu id välja, probleem oli *back-end*is
+
+### 2025-03-29
+**Aega kulus:** 4h  
+**Mida tegin:** Istekoha valimine ja broneerimine  
+**Raskusi valmistas:** Asünkroonsed funktsioonid

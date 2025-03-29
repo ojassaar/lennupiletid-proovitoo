@@ -12,9 +12,8 @@ function Lennud(props) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(filter),
         }).then(response => response.json())
-        .then(data => {console.log("andmed on: ", data); leiaLennud(data)})
+        .then(data => {leiaLennud(data)})
         .catch(error => console.error("Viga API päringus:", error))
-        .then(console.log("filter: ", filter));
       }
     }
 

@@ -19,7 +19,6 @@ function LennukiIsteplaan(props) {
         if (!props.lennuId) return;
 
         async function looLennuPõhjalMaatriks() {
-            console.log("olen funktsioonis looLennuPõhjalMaatriks");
             try {
                 const lend = await leiaLend();
                 const m = looMaatriks(lend);
@@ -113,7 +112,7 @@ function LennukiIsteplaan(props) {
         })
         .then(response => response.text())
         .then(data => {
-            console.log("Broneeritud:", data); setReloadCount(prev => prev + 1);
+            setReloadCount(prev => prev + 1);
         })
         .catch(error => console.error("Viga broneerimisel:", error));
     };
