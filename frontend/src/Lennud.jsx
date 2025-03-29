@@ -32,7 +32,7 @@ function Lennud(props) {
             <>
               <br />
               <input type="radio" id={lend.id} name="lennuvalikud" value={lend.id} checked={props.valitudLend == lend.id} onChange={(e) => props.onChange(e.target.value)}></input>
-              <label htmlFor={lend.id}>{ainultAeg(lend.väljumisaeg)}</label>
+              <label htmlFor={lend.id}>{ainultAeg(lend.väljumisaeg)} {lend.piletihind}€</label>
             </>
           ))}
         </>

@@ -14,15 +14,19 @@ public class Istekoht {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private boolean saadaval;
+    private int rida;
+    private int koht;
 
     @ManyToOne
-    @JoinColumn(name = "lend_id")
+    @JoinColumn(name = "lend", nullable = false)
     Lend lend;
 
     public Istekoht() {}
 
-    public Istekoht(Lend lend) {
+    public Istekoht(Lend lend, int rida, int koht) {
         this.lend = lend;
+        this.rida = rida;
+        this.koht = koht;
         this.saadaval = true;
     }
 
@@ -30,11 +34,19 @@ public class Istekoht {
         return id;
     }
 
-    public boolean kasSaadaval() {
+    public boolean isSaadaval() {
         return saadaval;
     }
 
     public void märgiVõetuks() {
         saadaval = false;
+    }
+
+    public int getRida() {
+        return rida;
+    }
+
+    public int getKoht() {
+        return koht;
     }
 }

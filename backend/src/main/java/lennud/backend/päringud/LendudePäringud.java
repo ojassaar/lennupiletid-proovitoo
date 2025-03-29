@@ -13,4 +13,7 @@ public interface LendudePäringud extends JpaRepository<Lend, Long>{
     @Query(value = "SELECT * from Lend WHERE algpunkt_id = ?1 AND sihtpunkt_id = ?2 AND CAST(väljumisaeg AS DATE) = ?3", nativeQuery = true)
     List<Lend> findFiltreeritud(long algpunkt, long sihtpunkt, LocalDate aeg);
 
+    @Query(value = "SELECT * from Lend WHERE id = ?1", nativeQuery = true)
+    List<Lend> findIdJärgi(long id);
+
 } 

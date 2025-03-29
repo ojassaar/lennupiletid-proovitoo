@@ -25,7 +25,6 @@ function App() {
       <label>Vali kuupäev</label>
       <DatePicker selected={väljumiskuupäev} onChange={(päev) => setväljumiskuupäev(päev)} />
       <Lennud algpunkt={algpunkt} sihtpunkt={sihtpunkt} väljumiskuupäev={väljumiskuupäev} valitudLend={valitudLend} onChange={setValitudLend} />
-      <p>{valitudLend}</p>
       <Isteplaan lennuId={valitudLend}/>
     </>
   )

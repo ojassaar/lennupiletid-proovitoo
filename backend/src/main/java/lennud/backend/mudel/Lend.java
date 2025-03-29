@@ -36,7 +36,7 @@ public class Lend {
     private double piletihind;
     
     @OneToMany(mappedBy = "lend")
-    private List<Istekoht> istekohad;
+    public List<Istekoht> istekohad;
 
     public Lend() {}
 
@@ -77,5 +77,13 @@ public class Lend {
 
     public double getPiletihind() {
         return piletihind;
+    }
+
+    public List<Istekoht> getIstekohad() {
+        return istekohad;
+    }
+
+    public void setIstekohad(List<Istekoht> istekohad) {
+        this.istekohad = istekohad;
     }
 }

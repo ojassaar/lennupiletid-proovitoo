@@ -6,6 +6,7 @@ public class Lennufilter {
     private LocalDate aeg;
     private long algpunkt;
     private long sihtpunkt;
+    private long id;
 
     public LocalDate getAeg() {
         return aeg;
@@ -29,5 +30,13 @@ public class Lennufilter {
 
     public void setSihtpunkt(long sihtpunkt) {
         this.sihtpunkt = sihtpunkt;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
