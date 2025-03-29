@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Lennujaamad from './Lennujaamad.jsx'
 import Lennud from './Lennud.jsx'
 import DatePicker from "react-datepicker";
+import Isteplaan from './Isteplaan.jsx';
 
 import "react-datepicker/dist/react-datepicker.css";
 import './App.css'
@@ -25,6 +26,7 @@ function App() {
       <DatePicker selected={väljumiskuupäev} onChange={(päev) => setväljumiskuupäev(päev)} />
       <Lennud algpunkt={algpunkt} sihtpunkt={sihtpunkt} väljumiskuupäev={väljumiskuupäev} valitudLend={valitudLend} onChange={setValitudLend} />
       <p>{valitudLend}</p>
+      <Isteplaan lennuId={valitudLend}/>
     </>
   )
 }

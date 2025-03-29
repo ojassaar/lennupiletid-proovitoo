@@ -39,12 +39,4 @@ function Lennud(props) {
     )
 }
 
-/*
-<p key={index + "p"} >{lend.algpunkt.nimi}</p>
-              <br key={index + "b"} />
-              <input type="radio" key={index} name="lennuvalikud" value={lend.id} checked={JSON.stringify(props.valitudLend) == JSON.stringify(lend.id)} onChange={(e) => props.onChange(e.target.value)} ></input>
-              <label key={index+"a"} htmlFor={lend.id}>{lend.väljumisaeg} {lend.id}</label>
-
-*/
-
 export default Lennud
